@@ -1,1 +1,55 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+class Aluno {
+private:
+    string nome;
+    string matricula;
+    string curso;
+
+public:
+    Aluno(const string _nome, const string _matricula, const string _curso) {
+        nome= _nome;
+        matricula= _matricula; 
+        curso= _curso;
+}
+    void imprimir() const {
+      cout << "Nome: " << nome << ", Matrícula: " << matricula << ", Curso: " << curso ;
+    }
+};
+
+
+class Cadastro {
+private:
+  vector<Aluno> alunos;
+
+public:
+    void adicionarAluno(const Aluno& aluno) {
+        alunos.push_back(aluno);
+    }
+
+    void imprimirAlunos() const {
+     cout << "Lista de Alunos:\n";
+        for (const auto& aluno : alunos) {
+            aluno.imprimir();
+        }
+    }
+};
+
+int main() {
+    Cadastro cadastro;
+
+  
+    cadastro.adicionarAluno(Aluno(" ISABELLY FARIAS ", "232013354", " ENGENHARIA DE REDES "));
+    cadastro.adicionarAluno(Aluno(" JOSE CARLOS ", "232016692", " ENGENHARIA DA COMPUTAÇÃO "));
+    cadastro.adicionarAluno(Aluno(" MARIA EDUARADA ", "232014475", " ENGENHARIA ELETRICA "));
+
+    
+    cadastro.imprimirAlunos();
+
+    return 0;
+}
+
+
 
