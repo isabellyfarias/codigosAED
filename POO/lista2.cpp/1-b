@@ -1,1 +1,35 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Carro {
+private:
+    string marca;
+    string modelo;
+    int ano;
+
+public:
+   
+    Carro(string _marca, string _modelo, int _ano) {
+        marca = _marca;
+        modelo = _modelo;
+        ano = _ano;
+    }
+
+   
+    void exibirInformacoes() {
+        cout << "Marca: " << marca << ", Modelo: " << modelo << ", Ano: " << ano;
+    }
+};
+
+int main() {
+    
+    Carro meuCarro("Toyota", "Civic", 2024);
+
+   
+    meuCarro.exibirInformacoes();
+
+    return 0;
+}
+
 
