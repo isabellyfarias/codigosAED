@@ -1,1 +1,53 @@
+/******************************************************************************
+
+Suponha um algoritmo A e um algoritmo B com funC'C5es de complexidade de tempo
+a(n) = n(ao quadrado) - n  + 549 e b(n) = 49n + 49, respectivamente. Determine quais são os valores
+de n pertencentes ao conjunto dos nuB4meros naturais para os quais A leva menos tempo
+para executar do que B.
+
+*******************************************************************************/
+#include <iostream>
+#include <cmath>
+
+
+double
+a (int n)
+{
+  return n * n * log (n) + 549;
+}
+
+
+double
+b (int n)
+{
+  return 49 * n + 49;
+}
+
+int
+main ()
+{
+  int n = 1;
+
+  while (true)
+	{
+
+	  double result_a = a (n);
+	  double result_b = b (n);
+
+
+	  if (result_a < result_b)
+		{
+
+		  std::
+			cout << "Para n = " << n << ", a(n) = " << result_a <<
+			" < b(n) = " << result_b;
+		  break;
+		}
+
+
+	  n++;
+	}
+
+  return 0;
+}
 
